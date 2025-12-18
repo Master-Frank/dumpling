@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🥟 冬至暖心祝福留言板</title>
+  <meta name="description" content="一句话，一只饺子，一份团圆。在冬至这一天，写下你的祝福，让温暖传递。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+XiaoWei&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- 雪花容器 -->
+  <div id="snowContainer"></div>
+
+  <!-- 背景蒸汽效果 -->
+  <div class="background-steam">
+    <div class="steam-particle"></div>
+    <div class="steam-particle"></div>
+    <div class="steam-particle"></div>
+    <div class="steam-particle"></div>
+    <div class="steam-particle"></div>
+  </div>
+
+  <!-- 主容器 -->
+  <div class="container">
+    <!-- 头部 -->
+    <header class="header">
+      <h1 class="title">🥟 冬至暖心祝福留言板</h1>
+      <p class="subtitle">一句话，一只饺子，一份团圆</p>
+    </header>
+
+    <!-- 进度指示器 -->
+    <div class="progress-indicator" id="progressIndicator">
+      <span class="progress-count">已包饺子：<strong id="dumplingCount">0</strong> 只</span>
+      <span class="progress-text" id="progressText">锅还在慢慢热</span>
+    </div>
+
+    <!-- 饺子锅 -->
+    <div class="pot-container">
+      <!-- 锅的外框 -->
+      <div class="pot">
+        <!-- 锅边高光 -->
+        <div class="pot-rim"></div>
+
+        <!-- 水面 -->
+        <div class="water-surface">
+          <div class="water-reflection"></div>
+        </div>
+
+        <!-- 饺子容器 -->
+        <div class="dumplings-container" id="dumplingsContainer">
+          <!-- 饺子会动态添加到这里 -->
+        </div>
+
+        <!-- 蒸汽层 -->
+        <div class="steam-layer">
+          <div class="steam" style="--delay: 0s; --x: 20%;"></div>
+          <div class="steam" style="--delay: 2s; --x: 40%;"></div>
+          <div class="steam" style="--delay: 1s; --x: 60%;"></div>
+          <div class="steam" style="--delay: 3s; --x: 80%;"></div>
+          <div class="steam" style="--delay: 0.5s; --x: 50%;"></div>
+        </div>
+      </div>
+
+      <!-- 锅把手 -->
+      <div class="pot-handle pot-handle-left"></div>
+      <div class="pot-handle pot-handle-right"></div>
+    </div>
+
+    <!-- 祝福输入区 -->
+    <div class="input-section">
+      <div class="input-wrapper">
+        <textarea id="blessingInput" class="blessing-input" placeholder="写一句想在冬至说出口的话…" maxlength="200"
+          rows="2"></textarea>
+        <span class="char-count"><span id="charCount">0</span>/200</span>
+      </div>
+      <button class="submit-btn" id="submitBtn">
+        <span class="btn-text">包进锅里</span>
+        <span class="btn-icon">🥟</span>
+      </button>
+    </div>
+
+    <!-- 成功提示 -->
+    <div class="success-toast" id="successToast">
+      <span id="toastMessage">这只饺子，已经有人记住了</span>
+    </div>
+
+    <!-- 祝福卡片弹窗 -->
+    <div class="blessing-card" id="blessingCard">
+      <div class="card-content">
+        <div class="card-dumpling">🥟</div>
+        <p class="card-text" id="cardText"></p>
+        <button class="card-close" id="cardClose">温暖收下</button>
+      </div>
+    </div>
+
+    <!-- 终局效果遮罩 -->
+    <div class="finale-overlay" id="finaleOverlay">
+      <div class="finale-text">这一锅，是我们一起包的 ✨</div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <p class="footer-text">饺子会散，心意不会 💛</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

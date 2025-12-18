@@ -1,0 +1,18 @@
+{
+  "name": "winter-solstice-blessings",
+  "version": "1.0.0",
+  "description": "冬至暖心祝福留言板 - Winter Solstice Warm Blessings Message Board",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "sql.js": "^1.10.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
