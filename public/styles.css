@@ -393,8 +393,8 @@ body {
 /* 饺子容器 */
 .dumplings-container {
   position: absolute;
-  top: 10%;
-  left: 10%;
+  top: 6%;
+  left: 6%;
   width: 80%;
   height: 40%;
   z-index: 12;
@@ -888,6 +888,11 @@ body.warm-finale .pot {
     padding: var(--spacing-md);
   }
 
+  .header {
+    margin-top: 60px;
+    margin-bottom: var(--spacing-md);
+  }
+
   .title {
     font-size: 1.5rem;
   }
@@ -897,26 +902,40 @@ body.warm-finale .pot {
   }
 
   .progress-indicator {
-    top: var(--spacing-sm);
-    right: var(--spacing-sm);
-    padding: var(--spacing-xs) var(--spacing-sm);
+    top: 10px;
+    right: 10px;
+    padding: 6px 12px;
+  }
+
+  .progress-count {
+    font-size: 0.8rem;
+  }
+
+  .progress-count strong {
+    font-size: 1rem;
   }
 
   .pot-container {
     max-width: 300px;
+    padding: 0 30px;
   }
 
   .pot-handle {
-    width: 30px;
-    height: 20px;
+    width: 35px;
+    height: 26px;
+    top: 42%;
+  }
+
+  .pot-handle::before {
+    border-width: 6px;
   }
 
   .pot-handle-left {
-    left: -25px;
+    left: 3px;
   }
 
   .pot-handle-right {
-    right: -25px;
+    right: 3px;
   }
 
   .dumpling {
@@ -925,10 +944,35 @@ body.warm-finale .pot {
   }
 
   .input-section {
-    padding: var(--spacing-md);
+    padding: 20px 20px 85px 20px;
+  }
+
+  .blessing-input {
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .char-count {
+    bottom: -40px;
+    left: 0;
+    font-size: 0.8rem;
+  }
+
+  .submit-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 24px;
+    font-size: 1rem;
   }
 
   .finale-text {
     font-size: 1.3rem;
+    white-space: normal;
+    text-align: center;
+    width: 90%;
+  }
+
+  .footer-text {
+    font-size: 1rem;
   }
 }

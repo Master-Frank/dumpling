@@ -63,8 +63,8 @@ app.get('/api/blessings/count', (req, res) => {
 // Get all blessings (with optional limit)
 app.get('/api/blessings', (req, res) => {
   try {
-    const limit = parseInt(req.query.limit) || 100;
-    const result = db.exec(`SELECT * FROM blessings ORDER BY created_at DESC LIMIT ${limit}`);
+    const limit = parseInt(req.query.limit) || 20;
+    const result = db.exec(`SELECT * FROM blessings ORDER BY RANDOM() LIMIT ${limit}`);
 
     if (result.length === 0) {
       return res.json([]);

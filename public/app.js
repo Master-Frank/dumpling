@@ -24,6 +24,11 @@ const CONFIG = {
         { left: '35%', top: '30%' },
         { left: '80%', top: '45%' },
         { left: '5%', top: '50%' },
+        { left: '40%', top: '50%' },
+        { left: '85%', top: '25%' },
+        { left: '10%', top: '65%' },
+        { left: '90%', top: '55%' },
+        { left: '50%', top: '40%' }
     ],
     SUCCESS_MESSAGES: [
         "这只饺子，已经有人记住了",
@@ -323,8 +328,13 @@ async function init() {
         const blessings = await api.getBlessings();
         state.blessings = blessings;
 
-        // 渲染饺子（限制显示数量，避免太拥挤）
-        const displayBlessings = blessings.slice(0, 15);
+        // 渲染饺子（超过20个时随机展示20个）
+        let displayBlessings = blessings;
+        if (blessings.length > 20) {
+            // 随机打乱并取前20个
+            displayBlessings = [...blessings].sort(() => 0.5 - Math.random()).slice(0, 20);
+        }
+
         displayBlessings.forEach(blessing => {
             addDumplingToContainer(blessing, false);
         });
